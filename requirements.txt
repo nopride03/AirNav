@@ -1,0 +1,25 @@
+torch==2.6.0 --index-url https://download.pytorch.org/whl/cu121
+torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu121
+torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu121
+# === Transformers ===
+transformers==4.50.0
+trl==0.17.0
+peft==0.15.0
+
+# === Logging & visualization ===
+wandb==0.18.3
+tensorboardx
+
+# === Utilities ===
+qwen_vl_utils
+babel
+python-Levenshtein
+matplotlib
+pycocotools
+openai
+httpx[socks]
+opencv-python
+rasterio
+shapely
+supervision
+math_verify
