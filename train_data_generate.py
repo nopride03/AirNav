@@ -95,7 +95,7 @@ def generate_train_data_episode(key, airnavData, instruction):
     
     cur_airnavData = airnavData
 
-    navGym = NavGym(cur_airnavData,data_dir = os.path.abspath('./TrainPhotoData/Train'))
+    navGym = NavGym(cur_airnavData,data_dir = os.path.abspath('./TrainPhotoData'))
     landmarks = instruction["landmarks"]
     persona = instruction["persona"]
 

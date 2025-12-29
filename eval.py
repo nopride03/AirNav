@@ -252,6 +252,9 @@ def eval_one_episode(airnav_data, airnav_index, eval_data, key):
         if actions[-1] == "STOP" or total_steps >= 160:  # 步数上限缩小
             break
         k += 1
+        
+    _, map_with_tar = navGym._get_cur_trajectory_map()
+    plt.imsave(navGym.father_image_dir + f"/{navGym.episode_id}_final_map.jpg", map_with_tar)
     
     result_data = {
         "actions": total_actions,
@@ -312,7 +315,6 @@ def val():
         with open(eval_data_path, 'r') as f:
             eval_data = json.load(f)
 
-        
         episodes, trajectories, actions = eval_test(airnav_data, airnav_index, eval_data, max_workers=max_workers)
         
         total_actions[eval_type[i]] = actions
