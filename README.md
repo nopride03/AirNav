@@ -63,15 +63,15 @@ All intermediate visualization images, as well as the final UAV flight trajector
 
 1. **Training Data Preparation**
 
- The `train_data_generate.py` script transforms the raw data into training-ready data.  
- All training-related images are stored in the `TrainPhotoData` directory.  
- The resulting training data should be further processed into formats compatible with the **LLaMA-Factory** and **VERL** frameworks for subsequent training.
+  The `train_data_generate.py` script transforms the raw data into training-ready data.  
+  All training-related images are stored in the `TrainPhotoData` directory.  
+  The resulting training data should be further processed into formats compatible with the **LLaMA-Factory** and **VERL** frameworks for subsequent training.
 
 ```bash
 python train_data_generate.py
 ```
 
-1. **SFT**
+2. **SFT**
 
 ```bash
 cd LLaMA-Factory
