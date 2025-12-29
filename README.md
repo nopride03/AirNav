@@ -61,7 +61,8 @@ All intermediate visualization images, as well as the final UAV flight trajector
 
 ⚠️ **Prerequisites**: Please configure the environments for [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [VERL](https://github.com/volcengine/verl) before training.
 
-1. Training Data Preparation
+1. **Training Data Preparation**
+
  The `train_data_generate.py` script transforms the raw data into training-ready data.  
  All training-related images are stored in the `TrainPhotoData` directory.  
  The resulting training data should be further processed into formats compatible with the **LLaMA-Factory** and **VERL** frameworks for subsequent training.
@@ -70,14 +71,14 @@ All intermediate visualization images, as well as the final UAV flight trajector
 python train_data_generate.py
 ```
 
-2. SFT
+1. **SFT**
 
 ```bash
 cd LLaMA-Factory
 llamafactory-cli train examples/train_lora/AirNav_lora_sft.yaml
 ```
 
-3. GRPO
+3. **GRPO**
 
 ```bash
 cd verl
