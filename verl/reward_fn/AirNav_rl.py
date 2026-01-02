@@ -63,7 +63,7 @@ def get_action_reward(solution_str, ground_truth, extra_info):
     
     if pre_stop == gt_stop:
         if gt_stop == True:
-            stop_reward = 0.8
+            stop_reward = 1
     else:
         stop_reward = 0
             
@@ -143,7 +143,7 @@ def get_distance_reward(solution_str, ground_truth, extra_info):
     
     yaw_weight = max(1 - abs(yaw_diff)/60 , 0)
     
-    score = max(dis_weight * 0.4, 0) + max(yaw_weight * 0.5, 0)
+    score = max(dis_weight * 1, 0) + max(yaw_weight * 1, 0)
 
     return score
 

@@ -1,6 +1,6 @@
 # 🗺️ AirNav: A Large-Scale Real-World UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions
 
-[![model](https://img.shields.io/badge/model-AirNavR1-yellow.svg)](https://huggingface.co/dpairnav/AirNav-R1) [![data](https://img.shields.io/badge/data-AirNav-blue.svg)](https://huggingface.co/datasets/dpairnav/AirNav)
+[![data](https://img.shields.io/badge/data-AirNav-blue.svg)](https://huggingface.co/datasets/dpairnav/AirNav) [![model](https://img.shields.io/badge/model-AirVLNR1-yellow.svg)](https://huggingface.co/dpairnav/AirVLN-R1)
 
 ---
 
@@ -26,8 +26,49 @@ This project depends on multiple models and tool libraries. It is recommended to
 
 ## 📦 Model and Data Preparation
 
-* Download model weights to `./model_weight/`
+### Dataset Structure
+
 * Download data to `./data/`
+* The `AirNav` dataset is organized into `train`, `val`, and `test` splits as follows:
+
+```text
+data
+|-- AirNav
+|   |-- test
+|   |   |-- airnav_test.json
+|   |   |-- info_test.json
+|   |-- train
+|   |   |-- airnav_train.json
+|   |   `-- info_train.json
+|   `-- val
+|       |-- airnav_val_seen.json
+|       |-- airnav_val_unseen.json
+|       |-- info_val_seen.json
+|       `-- info_val_unseen.json
+|-- cityrefer
+|   ...
+|-- gsam
+|   ...
+`-- rgbd-new
+|   ...
+```
+
+**File Description**
+
+- **`airnav_*.json`** files specify the environment configuration and are used to initialize the navigation simulator.
+- **`info_*.json`** files provide navigation instructions, action annotations, and associated landmark information for each episode.
+
+### Model Weights
+
+* Download model weights to `./model_weight/`
+  
+  | Baselines         | NE(m) | SR(%) | OSR(%) | SPL(%) | Checkpoints                                                                                                    |
+  | ----------------- | ----- | ----- | ------ | ------ | -------------------------------------------------------------------------------------------------------------- |
+  | Seq2Seq           | 336.1 | 1.28  | 10.31   | 1.08   | [💾](https://www.dropbox.com/scl/fi/l1pkjkqp9cg72u6x398hh/seq2seq_sp.pth?rlkey=8f9l6n2l6eaktmtgdu4af8u9x&dl=0)    |
+  | CMA               | 190.3 | 4.48  | 17.06   | 4.03   | [💾](https://www.dropbox.com/scl/fi/aljfwcdkt8dmwoxsr35d3/seq2seq_mturk.pth?rlkey=68s49ze697x1f5ahrbyz2l5c1&dl=0) |
+  | Qwen2.5-VL-7B SFT | 48.3 | 39.56  | 52.41  | 38.53   | [💾](https://www.dropbox.com/scl/fi/lcsvfv12w099j2qrf4b69/cma_sp.pth?rlkey=949z1haycpn3v3lung23cq5ok&dl=0)        |
+  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://www.dropbox.com/scl/fi/ubfzccbx4mm9nycdr8lp8/cma_mturk.pth?rlkey=5997km0vlbfzntnh20noov6eu&dl=0)     |
+  | AirVLN-R1         | 40.0 | 51.75  | 62.29  | 50.57   | [💾](https://www.dropbox.com/scl/fi/ijw6n748erb0n1ek5o0ok/mgp_sp.pth?rlkey=ygnms63elcpp059drouov0h09&dl=0)        |
 
 ## 🧠 Inference
 
@@ -52,8 +93,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve path/to/your/model \
 python eval.py
 ```
 
-3. Result Visualization  
-All intermediate visualization images, as well as the final UAV flight trajectory visualization, will be saved in the `EvalPhotoData` directory.
+3. Result Visualization
+   All intermediate visualization images, as well as the final UAV flight trajectory visualization, will be saved in the `EvalPhotoData` directory.
 
 ---
 
@@ -63,8 +104,8 @@ All intermediate visualization images, as well as the final UAV flight trajector
 
 1. **Training Data Preparation**
 
-  The `train_data_generate.py` script transforms the raw data into training-ready data.  
-  All training-related images are stored in the `TrainPhotoData` directory.  
+  The `train_data_generate.py` script transforms the raw data into training-ready data.
+  All training-related images are stored in the `TrainPhotoData` directory.
   The resulting training data should be further processed into formats compatible with the **LLaMA-Factory** and **VERL** frameworks for subsequent training.
 
 ```bash
