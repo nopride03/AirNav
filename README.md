@@ -64,11 +64,11 @@ data
   
   | Baselines         | NE(m) | SR(%) | OSR(%) | SPL(%) | Checkpoints                                                                                                    |
   | ----------------- | ----- | ----- | ------ | ------ | -------------------------------------------------------------------------------------------------------------- |
-  | Seq2Seq           | 336.1 | 1.28  | 10.31   | 1.08   | [💾](https://www.dropbox.com/scl/fi/l1pkjkqp9cg72u6x398hh/seq2seq_sp.pth?rlkey=8f9l6n2l6eaktmtgdu4af8u9x&dl=0)    |
-  | CMA               | 190.3 | 4.48  | 17.06   | 4.03   | [💾](https://www.dropbox.com/scl/fi/aljfwcdkt8dmwoxsr35d3/seq2seq_mturk.pth?rlkey=68s49ze697x1f5ahrbyz2l5c1&dl=0) |
-  | Qwen2.5-VL-7B SFT | 48.3 | 39.56  | 52.41  | 38.53   | [💾](https://www.dropbox.com/scl/fi/lcsvfv12w099j2qrf4b69/cma_sp.pth?rlkey=949z1haycpn3v3lung23cq5ok&dl=0)        |
-  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://www.dropbox.com/scl/fi/ubfzccbx4mm9nycdr8lp8/cma_mturk.pth?rlkey=5997km0vlbfzntnh20noov6eu&dl=0)     |
-  | AirVLN-R1         | 40.0 | 51.75  | 62.29  | 50.57   | [💾](https://www.dropbox.com/scl/fi/ijw6n748erb0n1ek5o0ok/mgp_sp.pth?rlkey=ygnms63elcpp059drouov0h09&dl=0)        |
+  | Seq2Seq           | 336.1 | 1.28  | 10.31   | 1.08   | [💾](https://huggingface.co/dpairnav/AirNavSeq2Seq)    |
+  | CMA               | 190.3 | 4.48  | 17.06   | 4.03   | [💾](https://huggingface.co/dpairnav/AirNavCMA) |
+  | Qwen2.5-VL-7B SFT | 48.3 | 39.56  | 52.41  | 38.53   | [💾](https://huggingface.co/dpairnav/AirNavSFT)        |
+  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)     |
+  | AirVLN-R1         | 40.0 | 51.75  | 62.29  | 50.57   | [💾](https://huggingface.co/dpairnav/AirVLN-R1)        |
 
 ## 🧠 Inference
 
