@@ -1,7 +1,5 @@
 # 🗺️ AirNav: A Large-Scale Real-World UAV Vision-and-Language Navigation Dataset with Natural and Diverse Instructions
 
-[![data](https://img.shields.io/badge/data-AirNav-blue.svg)](https://huggingface.co/datasets/dpairnav/AirNav) [![model](https://img.shields.io/badge/model-AirVLNR1-yellow.svg)](https://huggingface.co/dpairnav/AirVLN-R1)
-
 ---
 
 ## 📑 Introduction
@@ -27,6 +25,9 @@ This project depends on multiple models and tool libraries. It is recommended to
 ## 📦 Model and Data Preparation
 
 ### Dataset Structure
+
+The AirNav dataset is currently under preparation and will be released upon paper acceptance.
+🔗 **Download link:** *Coming soon*
 
 * Download data to `./data/`
 * The `AirNav` dataset is organized into `train`, `val`, and `test` splits as follows:
@@ -64,11 +65,11 @@ data
   
   | Baselines         | NE(m) | SR(%) | OSR(%) | SPL(%) | Checkpoints                                                                                                    |
   | ----------------- | ----- | ----- | ------ | ------ | -------------------------------------------------------------------------------------------------------------- |
-  | Seq2Seq           | 336.1 | 1.28  | 10.31   | 1.08   | [💾](https://huggingface.co/dpairnav/AirNavSeq2Seq)    |
-  | CMA               | 190.3 | 4.48  | 17.06   | 4.03   | [💾](https://huggingface.co/dpairnav/AirNavCMA) |
-  | Qwen2.5-VL-7B SFT | 48.3 | 39.56  | 52.41  | 38.53   | [💾](https://huggingface.co/dpairnav/AirNavSFT)        |
-  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)     |
-  | AirVLN-R1         | 40.0 | 51.75  | 62.29  | 50.57   | [💾](https://huggingface.co/dpairnav/AirVLN-R1)        |
+  | Seq2Seq           | 336.1 | 1.28  | 10.31   | 1.08   | 💾 *TBA*   |
+  | CMA               | 190.3 | 4.48  | 17.06   | 4.03   | 💾 *TBA* |
+  | Qwen2.5-VL-7B SFT | 48.3 | 39.56  | 52.41  | 38.53   | 💾 *TBA*      |
+  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | 💾 *TBA*    |
+  | AirVLN-R1         | 40.0 | 51.75  | 62.29  | 50.57   | 💾 *TBA*       |
 
 ## 🧠 Inference
 
@@ -100,7 +101,7 @@ python eval.py
 
 ## 🚀 Training
 
-⚠️ **Prerequisites**: Please configure the environments for [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [VERL](https://github.com/volcengine/verl) before training.
+⚠️ **Prerequisites**: Please configure the environments for LLaMA-Factory and VERL before training.
 
 1. **Training Data Preparation**
 
