@@ -121,8 +121,6 @@ def eval_one_episode(airnav_data, airnav_index, eval_data, key, model, tokenizer
         pred_actions = pred_actions.view(B, 8, 4)  # [B,8,4]
         pred_action_ids = pred_actions.argmax(dim=-1)  # [B, 8]
 
-        #pred_action_ids = pred_action_ids[0] # 减去batch那一维
-
         action_str_dict = {
             1:"MOVE_FORWARD", 
             3:"TURN_LEFT",
