@@ -249,7 +249,7 @@ def eval_one_episode(airnav_data, airnav_index, eval_data, key):
 
         cur_px = navGym.cur_position_px
 
-        if actions[-1] == "STOP" or total_steps >= 160:  # 步数上限缩小
+        if actions[-1] == "STOP" or total_steps >= 160:  
             break
         k += 1
         
