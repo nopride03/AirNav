@@ -28,7 +28,7 @@ This project depends on multiple models and tool libraries. It is recommended to
 
 The AirNav dataset is currently under preparation and will be released upon paper acceptance.
 
-🔗 **Download link:** *Coming soon*
+🔗 **Download link:** [AirNav](https://huggingface.co/datasets/dpairnav/AirNav)
 
 * Download data to `./data/`
 * The `AirNav` dataset is organized into `train`, `val`, and `test` splits as follows:
@@ -66,11 +66,11 @@ data
   
   | Baselines         | NE(m) | SR(%) | OSR(%) | SPL(%) | Checkpoints                                                                                                    |
   | ----------------- | ----- | ----- | ------ | ------ | -------------------------------------------------------------------------------------------------------------- |
-  | Seq2Seq           | 336.1 | 1.28  | 10.31   | 1.08   | 💾 *TBA*   |
-  | CMA               | 190.3 | 4.48  | 17.06   | 4.03   | 💾 *TBA* |
-  | Qwen2.5-VL-7B SFT | 48.3 | 39.56  | 52.41  | 38.53   | 💾 *TBA*      |
-  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | 💾 *TBA*    |
-  | AirVLN-R1         | 40.0 | 51.75  | 62.29  | 50.57   | 💾 *TBA*       |
+  | Seq2Seq           | 336.1 | 1.28  | 10.31   | 1.08   | [💾](https://huggingface.co/dpairnav/AirNavSeq2Seq)   |
+  | CMA               | 190.3 | 4.48  | 17.06   | 4.03   | [💾](https://huggingface.co/dpairnav/AirNavCMA) |
+  | Qwen2.5-VL-7B SFT | 48.3 | 39.56  | 52.41  | 38.53   | [💾](https://huggingface.co/dpairnav/AirNavSFT)      |
+  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)    |
+  | AirVLN-R1         | 40.0 | 51.75  | 62.29  | 50.57   | [💾](https://huggingface.co/dpairnav/AirVLN-R1)       |
 
 ## 🧠 Inference
 
@@ -84,7 +84,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve path/to/your/model \
   --host 0.0.0.0 \
   -tp 4 \
   --uvicorn-log-level debug \
-  --port your_port \
+  --port 8000 \
   --limit-mm-per-prompt image=5,video=0 \
   --max-model-len=4096
 ```
@@ -102,7 +102,7 @@ python eval.py
 
 ## 🚀 Training
 
-⚠️ **Prerequisites**: Please configure the environments for LLaMA-Factory and VERL before training.
+⚠️ **Prerequisites**: Please configure the environments for **LLaMA-Factory** and **VERL** before training.
 
 1. **Training Data Preparation**
 

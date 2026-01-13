@@ -22,7 +22,7 @@ Qwen_model = "qwen_2_5_vl_7b"
 MODEL_TYPE = Qwen_model
 
 max_workers = 5  
-save_file_name = "random"
+save_file_name = "qwen_2_5_vl_7b_airnav_eval"
 
 result_save_path1 = f"./result/val/{save_file_name}.json"
 actions_save_path1 = f"./result/val/actions/{save_file_name}.json"
