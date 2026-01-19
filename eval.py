@@ -189,7 +189,7 @@ def eval_one_episode(airnav_data, airnav_index, eval_data, key):
     while True:
         data_dict = dict()
 
-        data_dict["episode_id_case"] = navGym.episode_id + f"_case{k}"
+        data_dict["episode_id_case"] = key + f"_case{k}"
         
         data_dict["instruction"] = eval_data[key]["instruction"]
 
@@ -221,7 +221,7 @@ def eval_one_episode(airnav_data, airnav_index, eval_data, key):
             try:
                 retry_count += 1
                 if retry_count > 2:
-                    print(f"Max retries reached for episode {navGym.episode_id}, defaulting to STOP.")
+                    print(f"Max retries reached for episode {key}, defaulting to STOP.")
                     actions = ["STOP"]
                     break
                 response = client.chat.completions.create(
@@ -230,9 +230,9 @@ def eval_one_episode(airnav_data, airnav_index, eval_data, key):
                 )
                 actions,flag = parse_response(response.choices[0].message.content)
                 if not flag:
-                    print(f"Error parsing response for episode {navGym.episode_id}, retrying.")
+                    print(f"Error parsing response for episode {key}, retrying.")
             except Exception as e:
-                print(f"Error during API call for episode {navGym.episode_id}: {e}, retrying.")
+                print(f"Error during API call for episode {key}: {e}, retrying.")
                 
         actions = generate_random_action()
         history_actions.extend(actions)
@@ -254,7 +254,7 @@ def eval_one_episode(airnav_data, airnav_index, eval_data, key):
         k += 1
         
     _, map_with_tar = navGym._get_cur_trajectory_map()
-    plt.imsave(navGym.father_image_dir + f"/{navGym.episode_id}_final_map.jpg", map_with_tar)
+    plt.imsave(navGym.father_image_dir + f"/{key}_final_map.jpg", map_with_tar)
     
     result_data = {
         "actions": total_actions,
