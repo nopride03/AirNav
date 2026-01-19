@@ -75,7 +75,7 @@ data
 ## 🧠 Inference
 
 1. Start the vLLM service
-
+> **Note:** This project has been tested with **vLLM v0.7.3**, and using this version is recommended for best compatibility.
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve path/to/your/model \
   --dtype auto \
@@ -89,7 +89,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve path/to/your/model \
   --max-model-len=4096
 ```
 
-2. Start the inference script
+1. Start the inference script
 
 ```bash
 python eval.py
