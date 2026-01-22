@@ -26,8 +26,6 @@ This project depends on multiple models and tool libraries. It is recommended to
 
 ### Dataset Structure
 
-The AirNav dataset is currently under preparation and will be released upon paper acceptance.
-
 🔗 **Download link:** [AirNav](https://huggingface.co/datasets/dpairnav/AirNav-train)
 
 > **Note:** At present, only the **training split** of the AirNav dataset is publicly available.  
