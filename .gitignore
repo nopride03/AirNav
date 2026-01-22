@@ -3,3 +3,4 @@ data/
 model_weight/
 __pycache__/
 instruction_generate/
+data_train/

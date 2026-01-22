@@ -28,7 +28,10 @@ This project depends on multiple models and tool libraries. It is recommended to
 
 The AirNav dataset is currently under preparation and will be released upon paper acceptance.
 
-🔗 **Download link:** [AirNav](https://huggingface.co/datasets/dpairnav/AirNav)
+🔗 **Download link:** [AirNav](https://huggingface.co/datasets/dpairnav/AirNav-train)
+
+> **Note:** At present, only the **training split** of the AirNav dataset is publicly available.  
+> The validation and test splits will be released upon acceptance of the paper.
 
 * Download data to `./data/`
 * The `AirNav` dataset is organized into `train`, `val`, and `test` splits as follows:
