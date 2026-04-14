@@ -101,11 +101,6 @@ Configure the API client and model in `eval.py`:
 - `GPT_model`: set a vision-capable model name
 - `MODEL_TYPE = GPT_model`
 
-> Note:
->
-> - The model must support image input.
-> - If API rate limits occur, reduce `max_workers` in `eval.py`.
-
 3. Start the inference script
 
 ```bash
