@@ -1,0 +1,268 @@
+[
+  {
+    "start_position": [
+      2969,
+      1347
+    ],
+    "landmark_bbox": [],
+    "image_path": "./LandmarkPhotoData/birmingham_block_1_0_1/map_birmingham_block_1_0_1.jpg",
+    "image_size": [
+      3848,
+      4000
+    ],
+    "episode_id": [
+      "birmingham_block_1",
+      0,
+      6
+    ],
+    "target_description": "All of the buildings which surround the large parking area in the bottom right corner of the image.",
+    "target_processed_description": "buildings",
+    "target_type": "Building",
+    "target_position": [
+      2718,
+      736
+    ],
+    "surrounding_coordinates": [
+      [
+        2109,
+        0
+      ],
+      [
+        2212,
+        484
+      ],
+      [
+        2483,
+        888
+      ],
+      [
+        3066,
+        979
+      ],
+      [
+        3651,
+        1068
+      ],
+      [
+        3766,
+        516
+      ],
+      [
+        3873,
+        217
+      ],
+      [
+        3873,
+        891
+      ],
+      [
+        3808,
+        1492
+      ],
+      [
+        3223,
+        1402
+      ],
+      [
+        2641,
+        1310
+      ],
+      [
+        2403,
+        988
+      ],
+      [
+        2039,
+        1009
+      ],
+      [
+        1721,
+        720
+      ],
+      [
+        1874,
+        377
+      ],
+      [
+        1564,
+        221
+      ]
+    ]
+  },
+  {
+    "start_position": [
+      1353,
+      643
+    ],
+    "landmark_bbox": [
+      [
+        1435,
+        1363,
+        2175,
+        1820
+      ]
+    ],
+    "image_path": "./LandmarkPhotoData/birmingham_block_1_1_3/map_birmingham_block_1_1_3.jpg",
+    "image_size": [
+      3848,
+      4000
+    ],
+    "episode_id": [
+      "birmingham_block_1",
+      1,
+      7
+    ],
+    "target_description": "The brown gray building at the back of the reddish tan parking lot to the right of the Full Circle Events & Exhibitions Ltd.",
+    "target_processed_description": "brown gray building",
+    "target_type": "Building",
+    "target_position": [
+      216,
+      2369
+    ],
+    "surrounding_coordinates": [
+      [
+        263,
+        2467
+      ],
+      [
+        197,
+        2467
+      ],
+      [
+        140,
+        2457
+      ],
+      [
+        129,
+        2401
+      ],
+      [
+        131,
+        2341
+      ],
+      [
+        152,
+        2295
+      ],
+      [
+        193,
+        2269
+      ],
+      [
+        240,
+        2289
+      ],
+      [
+        285,
+        2291
+      ],
+      [
+        305,
+        2337
+      ],
+      [
+        301,
+        2399
+      ],
+      [
+        292,
+        2456
+      ]
+    ]
+  },
+  {
+    "start_position": [
+      1775,
+      1742
+    ],
+    "landmark_bbox": [
+      [
+        1589,
+        0,
+        3847,
+        1472
+      ],
+      [
+        2042,
+        747,
+        2468,
+        1132
+      ]
+    ],
+    "image_path": "./LandmarkPhotoData/birmingham_block_1_2_5/map_birmingham_block_1_2_5.jpg",
+    "image_size": [
+      3848,
+      4000
+    ],
+    "episode_id": [
+      "birmingham_block_1",
+      2,
+      6
+    ],
+    "target_description": "The large gray rectangular building across from the One Stop building and the Gym.",
+    "target_processed_description": "large gray rectangular building",
+    "target_type": "Building",
+    "target_position": [
+      1805,
+      1592
+    ],
+    "surrounding_coordinates": [
+      [
+        2100,
+        1843
+      ],
+      [
+        1936,
+        1802
+      ],
+      [
+        1784,
+        1766
+      ],
+      [
+        1672,
+        1828
+      ],
+      [
+        1515,
+        1780
+      ],
+      [
+        1421,
+        1688
+      ],
+      [
+        1467,
+        1529
+      ],
+      [
+        1514,
+        1370
+      ],
+      [
+        1657,
+        1370
+      ],
+      [
+        1817,
+        1415
+      ],
+      [
+        1975,
+        1462
+      ],
+      [
+        2133,
+        1509
+      ],
+      [
+        2179,
+        1629
+      ],
+      [
+        2132,
+        1788
+      ]
+    ]
+  }
+]

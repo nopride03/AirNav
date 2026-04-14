@@ -1,0 +1,119 @@
+[
+  {
+    "area": "birmingham",
+    "block": 1,
+    "object_ids": [
+      1
+    ],
+    "ann_ids": [
+      7
+    ],
+    "descriptions": [
+      "A beige and brown house with a dark gray roof cut off by the edge of the map with a white car in front of it off Grosvenor Road"
+    ],
+    "trajectory": [
+      [
+        160.60123651197813,
+        514.005637509228,
+        66.04,
+        1.7058928770060673,
+        0
+      ]
+    ],
+    "marker_positions": [
+      [
+        34.9935722912,
+        560.4815214409,
+        17.9408423311
+      ]
+    ],
+    "target_positions": [
+      [
+        36.921875,
+        563.09375,
+        14.9950027466
+      ]
+    ],
+    "total_score": 6.89,
+    "dist_marker_to_target": 4.38,
+    "split": "train_seen"
+  },
+  {
+    "area": "birmingham",
+    "block": 1,
+    "object_ids": [
+      2
+    ],
+    "ann_ids": [
+      6
+    ],
+    "descriptions": [
+      "A big building with grey roof situated behind the St Teresa of the Child Jesus Catholic Church. A blue car and a grey car is parked close to the building. The railway track is behind the building."
+    ],
+    "trajectory": [
+      [
+        371.2585621579731,
+        713.6079777435425,
+        66.04,
+        -1.3570472742684243,
+        0
+      ]
+    ],
+    "marker_positions": [
+      [
+        192.8286551992,
+        630.6753816242,
+        23.1426029076
+      ]
+    ],
+    "target_positions": [
+      [
+        195.765625,
+        640.78125,
+        14.4749984741
+      ]
+    ],
+    "total_score": 32.05,
+    "dist_marker_to_target": 13.63,
+    "split": "train_seen"
+  },
+  {
+    "area": "birmingham",
+    "block": 1,
+    "object_ids": [
+      2
+    ],
+    "ann_ids": [
+      7
+    ],
+    "descriptions": [
+      "A big building with grey roof situated behind the St Teresa of the Child Jesus Catholic Church. A blue car and a grey car is parked close to the building. The railway track is behind the building."
+    ],
+    "trajectory": [
+      [
+        246.66615087745163,
+        762.0044645397745,
+        66.04,
+        -0.31787939949266475,
+        0
+      ]
+    ],
+    "marker_positions": [
+      [
+        192.8286551992,
+        630.6753816242,
+        23.1426029076
+      ]
+    ],
+    "target_positions": [
+      [
+        195.765625,
+        640.78125,
+        14.4749984741
+      ]
+    ],
+    "total_score": 32.05,
+    "dist_marker_to_target": 13.63,
+    "split": "train_seen"
+  }
+]

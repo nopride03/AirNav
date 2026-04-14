@@ -13,6 +13,15 @@ from tqdm import tqdm
 import re
 import random
 
+
+GPT_client = AzureOpenAI(
+    api_key="EMPTY",
+    api_version="2024-12-01-preview",
+    azure_endpoint="your_azure_endpoint"
+)
+GPT_model = "gpt-4o"
+
+
 Qwen_client = OpenAI(
     base_url="http://localhost:8000/v1",  
     api_key="EMPTY"                     
@@ -20,6 +29,7 @@ Qwen_client = OpenAI(
 Qwen_model = "qwen_2_5_vl_7b"
 
 MODEL_TYPE = Qwen_model
+TEMPERATURE = 1.0
 
 max_workers = 5  
 save_file_name = "qwen_2_5_vl_7b_airnav_eval"
@@ -213,7 +223,10 @@ def eval_one_episode(airnav_data, airnav_index, eval_data, key):
         data_dict["cur_position"] = navGym.cur_position
         message = get_eval_messages(data_dict)
         
-        client = Qwen_client
+        if MODEL_TYPE == Qwen_model:
+            client = Qwen_client
+        else:
+            client = GPT_client
               
         flag = True
         retry_count = 0
@@ -227,6 +240,7 @@ def eval_one_episode(airnav_data, airnav_index, eval_data, key):
                 response = client.chat.completions.create(
                     model=MODEL_TYPE,
                     messages=message,
+                    temperature=TEMPERATURE,
                 )
                 actions,flag = parse_response(response.choices[0].message.content)
                 if not flag:

@@ -31,8 +31,8 @@ This project depends on multiple models and tool libraries. It is recommended to
 > **Note:** At present, only the **training split** of the AirNav dataset is publicly available.  
 > The validation and test splits will be released upon acceptance of the paper.
 
-* Download data to `./data/`
-* The `AirNav` dataset is organized into `train`, `val`, and `test` splits as follows:
+- Download data to `./data/`
+- The `AirNav` dataset is organized into `train`, `val`, and `test` splits as follows:
 
 ```text
 data
@@ -58,26 +58,28 @@ data
 
 **File Description**
 
-- **`airnav_*.json`** files specify the environment configuration and are used to initialize the navigation simulator.
-- **`info_*.json`** files provide navigation instructions, action annotations, and associated landmark information for each episode.
+- `**airnav_*.json`** files specify the environment configuration and are used to initialize the navigation simulator.
+- `**info_*.json**` files provide navigation instructions, action annotations, and associated landmark information for each episode.
 
 ### Model Weights
 
-* Download model weights to `./model_weight/`
-  
-  | Baselines         | NE(m) | SR(%) | OSR(%) | SPL(%) | Checkpoints                                                                                                    |
-  | ----------------- | ----- | ----- | ------ | ------ | -------------------------------------------------------------------------------------------------------------- |
-  | Seq2Seq           | 336.1 | 1.28  | 10.31   | 1.08   | [💾](https://huggingface.co/dpairnav/AirNavSeq2Seq)   |
-  | CMA               | 190.3 | 4.48  | 17.06   | 4.03   | [💾](https://huggingface.co/dpairnav/AirNavCMA) |
-  | Qwen2.5-VL-7B SFT | 48.3 | 39.56  | 52.41  | 38.53   | [💾](https://huggingface.co/dpairnav/AirNavSFT)      |
-  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)    |
-  | AirVLN-R1         | 40.0 | 51.75  | 62.29  | 50.57   | [💾](https://huggingface.co/dpairnav/AirVLN-R1)       |
+- Download model weights to `./model_weight/`
+
+  | Baselines         | NE(m) | SR(%) | OSR(%) | SPL(%) | Checkpoints                                         |
+  | ----------------- | ----- | ----- | ------ | ------ | --------------------------------------------------- |
+  | Seq2Seq           | 336.1 | 1.28  | 10.31  | 1.08   | [💾](https://huggingface.co/dpairnav/AirNavSeq2Seq) |
+  | CMA               | 190.3 | 4.48  | 17.06  | 4.03   | [💾](https://huggingface.co/dpairnav/AirNavCMA)     |
+  | Qwen2.5-VL-7B SFT | 48.3  | 39.56 | 52.41  | 38.53  | [💾](https://huggingface.co/dpairnav/AirNavSFT)     |
+  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)      |
+  | AirVLN-R1         | 40.0  | 51.75 | 62.29  | 50.57  | [💾](https://huggingface.co/dpairnav/AirVLN-R1)     |
+
 
 ## 🧠 Inference
 
-1. Start the vLLM service
+1. Option A: Start the local vLLM service
 
 **Note:** This project has been tested with **vLLM v0.7.3**, and using this version is recommended for best compatibility.
+
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve path/to/your/model \
   --dtype auto \
@@ -91,14 +93,27 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve path/to/your/model \
   --max-model-len=4096
 ```
 
-2. Start the inference script
+1. Option B: Use a GPT-style API service (no local vLLM)
+
+Configure the API client and model in `eval.py`:
+
+- `GPT_client`: set your API key and endpoint
+- `GPT_model`: set a vision-capable model name
+- `MODEL_TYPE = GPT_model`
+
+> Note:
+>
+> - The model must support image input.
+> - If API rate limits occur, reduce `max_workers` in `eval.py`.
+
+1. Start the inference script
 
 ```bash
 python eval.py
 ```
 
-3. Result Visualization
-   All intermediate visualization images, as well as the final UAV flight trajectory visualization, will be saved in the `EvalPhotoData` directory.
+1. Result Visualization
+  All intermediate visualization images, as well as the final UAV flight trajectory visualization, will be saved in the `EvalPhotoData` directory.
 
 ---
 
@@ -107,7 +122,6 @@ python eval.py
 ⚠️ **Prerequisites**: Please configure the environments for **LLaMA-Factory** and **VERL** before training.
 
 1. **Training Data Preparation**
-
   The `train_data_generate.py` script transforms the raw data into training-ready data.
   All training-related images are stored in the `TrainPhotoData` directory.
   The resulting training data should be further processed into formats compatible with the **LLaMA-Factory** and **VERL** frameworks for subsequent training.
@@ -116,14 +130,14 @@ python eval.py
 python train_data_generate.py
 ```
 
-2. **SFT**
+1. **SFT**
 
 ```bash
 cd LLaMA-Factory
 llamafactory-cli train examples/train_lora/AirNav_lora_sft.yaml
 ```
 
-3. **GRPO**
+1. **GRPO**
 
 ```bash
 cd verl
@@ -131,3 +145,4 @@ bash ./my_script/run_qwen2_5_vl_7b.sh
 ```
 
 ---
+
