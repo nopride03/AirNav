@@ -58,8 +58,8 @@ data
 
 **File Description**
 
-- `**airnav_*.json`** files specify the environment configuration and are used to initialize the navigation simulator.
-- `**info_*.json**` files provide navigation instructions, action annotations, and associated landmark information for each episode.
+- `airnav_*.json` files specify the environment configuration and are used to initialize the navigation simulator.
+- `info_*.json` files provide navigation instructions, action annotations, and associated landmark information for each episode.
 
 ### Model Weights
 
@@ -93,7 +93,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve path/to/your/model \
   --max-model-len=4096
 ```
 
-1. Option B: Use a GPT-style API service (no local vLLM)
+2. Option B: Use a GPT-style API service (no local vLLM)
 
 Configure the API client and model in `eval.py`:
 
@@ -106,13 +106,13 @@ Configure the API client and model in `eval.py`:
 > - The model must support image input.
 > - If API rate limits occur, reduce `max_workers` in `eval.py`.
 
-1. Start the inference script
+3. Start the inference script
 
 ```bash
 python eval.py
 ```
 
-1. Result Visualization
+4. Result Visualization
   All intermediate visualization images, as well as the final UAV flight trajectory visualization, will be saved in the `EvalPhotoData` directory.
 
 ---
