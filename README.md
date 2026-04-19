@@ -22,6 +22,31 @@ This project depends on multiple models and tool libraries. It is recommended to
 
 ---
 
+## 🏗️ Data Generation Pipeline
+
+The `data_generation/` module builds AirNav-style training data in four stages:
+
+1. Start/target sampling and target description generation
+2. Landmark planning and description refinement
+3. Trajectory synthesis with action sequences
+4. Multi-persona instruction generation
+
+Run from project root:
+
+```bash
+python data_generation/data_pipeline.py
+```
+
+Before running, create `data_generation/config.yaml` and set:
+- dataset paths (`citynav_data_path`, `citynav_data_info_path`)
+- output paths (`landmark_save_path`, `landmark_revised_path`, `instruction_save_path`)
+- API config (`api.gpt4o`)
+
+Main outputs:
+- `landmark_data.json` (step 1-3 results)
+- `landmark_data_revised.json` (refined landmarks)
+- `instruction_persona.json` (final instructions)
+
 ## 📦 Model and Data Preparation
 
 ### Dataset Structure
@@ -72,7 +97,6 @@ data
   | Qwen2.5-VL-7B SFT | 48.3  | 39.56 | 52.41  | 38.53  | [💾](https://huggingface.co/dpairnav/AirNavSFT)     |
   | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)      |
   | AirVLN-R1         | 40.0  | 51.75 | 62.29  | 50.57  | [💾](https://huggingface.co/dpairnav/AirVLN-R1)     |
-
 
 ## 🧠 Inference
 
