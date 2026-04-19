@@ -24,7 +24,7 @@ This project depends on multiple models and tool libraries. It is recommended to
 
 ## 🏗️ Data Generation Pipeline
 
-The `data_generation/` module builds AirNav-style training data in four stages:
+The `data_generation/` module generates natural and diverse AirNav-style navigation instructions through a four-stage pipeline.
 
 1. Start/target sampling and target description generation
 2. Landmark planning and description refinement
@@ -38,11 +38,13 @@ python data_generation/data_pipeline.py
 ```
 
 Before running, create `data_generation/config.yaml` and set:
+
 - dataset paths (`citynav_data_path`, `citynav_data_info_path`)
 - output paths (`landmark_save_path`, `landmark_revised_path`, `instruction_save_path`)
 - API config (`api.gpt4o`)
 
 Main outputs:
+
 - `landmark_data.json` (step 1-3 results)
 - `landmark_data_revised.json` (refined landmarks)
 - `instruction_persona.json` (final instructions)
@@ -51,10 +53,7 @@ Main outputs:
 
 ### Dataset Structure
 
-🔗 **Download link:** [AirNav](https://huggingface.co/datasets/dpairnav/AirNav-train)
-
-> **Note:** At present, only the **training split** of the AirNav dataset is publicly available.  
-> The validation and test splits will be released upon acceptance of the paper.
+🔗 **Download link:** [AirNav](https://huggingface.co/datasets/dpairnav/AirNav)
 
 - Download data to `./data/`
 - The `AirNav` dataset is organized into `train`, `val`, and `test` splits as follows:
@@ -98,6 +97,7 @@ data
   | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)      |
   | AirVLN-R1         | 40.0  | 51.75 | 62.29  | 50.57  | [💾](https://huggingface.co/dpairnav/AirVLN-R1)     |
 
+
 ## 🧠 Inference
 
 1. Option A: Start the local vLLM service
@@ -117,7 +117,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve path/to/your/model \
   --max-model-len=4096
 ```
 
-2. Option B: Use a GPT-style API service (no local vLLM)
+1. Option B: Use a GPT-style API service (no local vLLM)
 
 Configure the API client and model in `eval.py`:
 
@@ -125,13 +125,13 @@ Configure the API client and model in `eval.py`:
 - `GPT_model`: set a vision-capable model name
 - `MODEL_TYPE = GPT_model`
 
-3. Start the inference script
+1. Start the inference script
 
 ```bash
 python eval.py
 ```
 
-4. Result Visualization
+1. Result Visualization
   All intermediate visualization images, as well as the final UAV flight trajectory visualization, will be saved in the `EvalPhotoData` directory.
 
 ---
