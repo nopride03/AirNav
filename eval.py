@@ -22,10 +22,16 @@ GPT_client = AzureOpenAI(
 GPT_model = "gpt-4o"
 
 
+Qwen_vl_plus_client = OpenAI(
+        api_key = "your_api_key",
+        base_url = "your_base_url"
+)
+
 Qwen_client = OpenAI(
     base_url="http://localhost:8000/v1",  
     api_key="EMPTY"                     
 )
+
 Qwen_model = "qwen_2_5_vl_7b"
 
 MODEL_TYPE = Qwen_model

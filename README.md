@@ -117,7 +117,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve path/to/your/model \
   --max-model-len=4096
 ```
 
-1. Option B: Use a GPT-style API service (no local vLLM)
+2. Option B: Use a GPT-style API service (no local vLLM)
 
 Configure the API client and model in `eval.py`:
 
@@ -125,13 +125,21 @@ Configure the API client and model in `eval.py`:
 - `GPT_model`: set a vision-capable model name
 - `MODEL_TYPE = GPT_model`
 
-1. Start the inference script
+Model/API settings used in `eval.py`:
+
+| API Provider | Model | Version | Temperature |
+| --- | --- | --- | --- |
+| Azure OpenAI | `gpt-5` | `2024-12-01-preview` | `1.0` |
+| Azure OpenAI | `gpt-4o` | `2024-12-01-preview` | `1.0` |
+| DashScope (compatible-mode) | `qwen3-vl-plus` | `empty` | `1.0` |
+
+3. Start the inference script
 
 ```bash
 python eval.py
 ```
 
-1. Result Visualization
+4. Result Visualization
   All intermediate visualization images, as well as the final UAV flight trajectory visualization, will be saved in the `EvalPhotoData` directory.
 
 ---
@@ -149,14 +157,14 @@ python eval.py
 python train_data_generate.py
 ```
 
-1. **SFT**
+2. **SFT**
 
 ```bash
 cd LLaMA-Factory
 llamafactory-cli train examples/train_lora/AirNav_lora_sft.yaml
 ```
 
-1. **GRPO**
+3. **GRPO**
 
 ```bash
 cd verl
