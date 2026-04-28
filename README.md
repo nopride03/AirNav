@@ -14,10 +14,10 @@ This project depends on multiple models and tool libraries. It is recommended to
 ### Install Conda Environment
 
 ```bash
-- conda create -n airnav python=3.10
-- conda activate airnav
+conda create -n airnav python=3.10
+conda activate airnav
 
-- pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ---
@@ -147,6 +147,25 @@ python eval.py
 ## 🚀 Training
 
 ⚠️ **Prerequisites**: Please configure the environments for **LLaMA-Factory** and **VERL** before training.
+Each framework needs its own Python environment (different dependency pins).
+
+For LLaMA-Factory, we recommend a Python 3.10 conda env with the versions in
+`LLaMA-Factory/requirements.txt`:
+```bash
+conda create -p /path/to/env/air_train python=3.10 -y && conda activate /path/to/env/air_train
+pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+cd LLaMA-Factory && pip install -r requirements.txt && pip install -e . --no-deps
+```
+
+For VERL, we recommend the official install script (FSDP-only mode), then add the
+reward-function dependency:
+```bash
+conda create -p /path/to/env/air_rl python=3.10 -y && conda activate /path/to/env/air_rl
+cd verl
+USE_MEGATRON=0 USE_SGLANG=0 bash scripts/install_vllm_sglang_mcore.sh
+pip install --no-deps -e .
+pip install rasterio   # required by verl/reward_fn/AirNav_rl.py
+```
 
 1. **Training Data Preparation**
   The `train_data_generate.py` script transforms the raw data into training-ready data.
@@ -157,6 +176,21 @@ python eval.py
 python train_data_generate.py
 ```
 
+For LLaMA-Factory, convert the output of `train_data_generate.py` to ShareGPT schema:
+
+```bash
+python train_to_sharegpt.py --input data/AirNav/train/train.json --output LLaMA-Factory/data/airnav_sft.json
+```
+
+Then register the output of `train_to_sharegpt.py` in `LLaMA-Factory/data/dataset_info.json`.
+
+For VERL, convert the output of `train_data_generate.py` into VERL parquet format. 
+
+```bash
+cd verl
+python examples/data_preprocess/AirNav_tool.py --local_dir ./data
+```
+
 2. **SFT**
 
 ```bash
@@ -164,12 +198,10 @@ cd LLaMA-Factory
 llamafactory-cli train examples/train_lora/AirNav_lora_sft.yaml
 ```
 
+
 3. **GRPO**
 
 ```bash
-cd verl
 bash ./my_script/run_qwen2_5_vl_7b.sh
 ```
-
----
 
