@@ -1,6 +1,8 @@
-torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121
-torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
-torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124
+torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu124
+torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu124
+# === Inference engine ===
+vllm==0.7.3
 # === Transformers ===
 transformers==4.50.0
 trl==0.17.0
