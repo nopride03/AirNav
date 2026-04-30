@@ -70,7 +70,7 @@ def get_action_reward(solution_str, ground_truth, extra_info):
     return stop_reward
 
 
-image_dir = Path("AirNav/data/rgbd-new")
+image_dir = Path(__file__).resolve().parents[2] / "data" / "rgbd-new"
 raster_cache = {
     raster_path.stem: rasterio.open(raster_path)
     for raster_path in image_dir.glob("*.tif")

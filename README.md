@@ -165,6 +165,8 @@ cd verl
 USE_MEGATRON=0 USE_SGLANG=0 bash scripts/install_vllm_sglang_mcore.sh
 pip install --no-deps -e .
 pip install rasterio   # required by verl/reward_fn/AirNav_rl.py
+pip install --no-deps "transformers==4.51.0"  # verl is incompatible with transformers>=5.0
+pip install "tokenizers>=0.21,<0.22"  # pin to match transformers 4.51
 ```
 
 1. **Training Data Preparation**
@@ -184,7 +186,7 @@ python train_to_sharegpt.py --input data/AirNav/train/train.json --output LLaMA-
 
 Then register the output of `train_to_sharegpt.py` in `LLaMA-Factory/data/dataset_info.json`.
 
-For VERL, convert the output of `train_data_generate.py` into VERL parquet format. 
+For VERL, convert the output of `train_data_generate.py` into VERL parquet format:
 
 ```bash
 cd verl
