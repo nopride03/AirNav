@@ -353,6 +353,8 @@ def test():
         json.dump(total_result, f, indent=4)
     return 
 
+
+
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 model_type="CMA"
 
