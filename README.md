@@ -206,7 +206,7 @@ llamafactory-cli train examples/train_lora/AirNav_lora_sft.yaml
 bash ./my_script/run_qwen2_5_vl_7b.sh
 ```
 
-4. **Lightweight Baseline Training (CMA / Seq2Seq)**
+4. **CMA / Seq2Seq**
 
 Set `model_type` in `light_model_train.py` to switch between `CMA` and `Seq2Seq`.
 
