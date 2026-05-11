@@ -1,0 +1,47 @@
+[
+    {
+        "episode_id": "birmingham_block_1_1_7",
+        "start_px": [1332, 2829],
+        "target_px": [216, 2369],
+        "start_pose": [148.50, 517.00, 11.08, 2.38],
+        "target_description": "The target is the white car on the gray asphalt road beside the long dark-gray roof, appearing as a bright rectangular vehicle parked directly next to the building.",
+        "target_view_path": "birmingham_block_1_1_7/target_view/target_view.jpg",
+        "whole_map_surroundings": "birmingham_block_1_1_7/whole_map_surroundings.jpg",
+        "tra_map_with_marked": "birmingham_block_1_1_7/tra_map_with_marked.jpg",
+        "quality_filter_passed": true,
+        "landmarks": [
+            {
+                "landmark_pos": [1000, 2690],
+                "landmark_description": "T-junction with a red car stopped at the intersection, surrounded by parked vehicles, greenery, and buildings with brown roofs.",
+                "landmark_view": "landmark_view/landmark_1.jpg",
+                "revised": true
+            },
+            {
+                "landmark_pos": [662, 2553],
+                "landmark_description": "A curved road with parked cars on both sides, bordered by residential buildings with brown roofs on the left and greenery/parking areas on the right.",
+                "landmark_view": "landmark_view/landmark_2.jpg",
+                "revised": true
+            },
+            {
+                "landmark_pos": [216, 2369],
+                "landmark_description": "White car on the gray asphalt road beside the long dark-gray roof, parked directly next to the building.",
+                "landmark_view": "landmark_view/landmark_3.jpg",
+                "revised": false
+            }
+        ],
+        "action_segment": [
+            ["MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "TURN_LEFT", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD"],
+            ["MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "TURN_RIGHT", "MOVE_FORWARD"],
+            ["MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "TURN_LEFT", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "STOP"]
+        ],
+        "actions": [
+            "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "TURN_LEFT",
+            "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD",
+            "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD",
+            "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "TURN_RIGHT",
+            "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD",
+            "MOVE_FORWARD", "TURN_LEFT", "MOVE_FORWARD", "MOVE_FORWARD",
+            "MOVE_FORWARD", "MOVE_FORWARD", "MOVE_FORWARD", "STOP"
+        ]
+    }
+]

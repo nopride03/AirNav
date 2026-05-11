@@ -1,0 +1,22 @@
+[
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "\n## Role\nYou are an expert navigation assistant for a UAV (Unmanned Aerial Vehicle) flight simulator.\n\n## Task Objective\nThe UAV operates in a 3D urban environment with visible roads, buildings, and landmarks.\nYour task is to predict the next sequence of UAV actions based on:\n1. A given natural language navigation instruction,\n2. The current state of the UAV, including its position and heading angle,\n3. The current top-down UAV view image,\n4. Up to four historical top-down view images from previous time steps (if available),\n5. The previously executed UAV actions (if available).\n"
+            },
+            {
+                "role": "user",
+                "content": "<image>\n(Above is historical view 1)\n<image>\n(Above is the current view)\n\n## Text Input\n- **Navigation instruction**: Turn left until the large industrial building with a white roof covered in rows of solar panels, next to a paved parking lot, is directly ahead. Move forward toward it, then turn left and continue moving forward until you reach the building. From the building, continue moving forward toward the dark gray car parked on the asphalt and stop.  \n- **Current state of the UAV**: [976.409984145862, 816.4660591908745, 59.83900773908499, -179.61163448252157] (x, y, z in meters; heading in degrees)\n- **Previously executed actions**: [\"TURN_LEFT\", \"TURN_LEFT\", \"MOVE_FORWARD\", \"TURN_LEFT\", \"MOVE_FORWARD\", \"MOVE_FORWARD\", \"MOVE_FORWARD\", \"MOVE_FORWARD\"]  \n  (A list of past actions the UAV has taken, in chronological order.)\n\n## Image Input\n**UAV (Unmanned Aerial Vehicle) Top-Down View Sequence**  \n- Historical top-down views (from oldest to newest) show the UAV’s past observations. \n- The last image is the current top-down view of the UAV.  \n- In all images, the **top of the image corresponds to the UAV’s forward direction** (its heading).\n\nBased on the navigation instruction, the UAV’s current state, the previously executed actions (which can help infer the UAV’s current orientation and progress), and the provided images, predict how the UAV should move **step by step** to follow the instruction accurately.\n\n## Prediction Rules\n1. Predict no more than **8 future actions** for the UAV to execute.\n2. If the target location is reachable in fewer than 8 actions, output less than 8 actions sequence and end with **\"STOP\"**. Otherwise, it clearly requires more than 8 actions to approach the target, output exactly 8 future actions.\n3. You **must** output **\"STOP\"** if the UAV has already reached the described target.\n4. Output a **JSON list** of actions, in the **exact order** they should be executed.\n5. Do **not** include any explanations, reasoning, or additional text — only output the JSON list.\n\n## Discrete Action Space\n- `MOVE_FORWARD`: move straight 5 meters in the current heading\n- `TURN_LEFT`: rotate left 30°\n- `TURN_RIGHT`: rotate right 30°\n- `STOP`: stop the flight\n\n## Output Format Examples\n[\"TURN_RIGHT\", \"TURN_RIGHT\", \"MOVE_FORWARD\", \"MOVE_FORWARD\", \"MOVE_FORWARD\", \"MOVE_FORWARD\", \"MOVE_FORWARD\", \"MOVE_FORWARD\"]  \nor  \n[\"MOVE_FORWARD\", \"MOVE_FORWARD\", \"STOP\"]  \nor  \n[\"STOP\"]\n"
+            },
+            {
+                "role": "assistant",
+                "content": "[\"MOVE_FORWARD\", \"MOVE_FORWARD\", \"MOVE_FORWARD\", \"MOVE_FORWARD\", \"MOVE_FORWARD\", \"STOP\"]"
+            }
+        ],
+        "images": [
+            "./data/PhotoDataExample/view1.jpg",
+            "./data/PhotoDataExample/view2.jpg"
+        ]
+    }
+]
