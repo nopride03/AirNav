@@ -53,7 +53,7 @@ Main outputs:
 
 ### Dataset Structure
 
-🔗 **Download link:** [AirNav](https://huggingface.co/datasets/dpairnav/AirNav)
+🔗 **Download link:** To preserve anonymous review, dataset links are temporarily hidden.
 
 - Download data to `./data/`
 - The `AirNav` dataset is organized into `train`, `val`, and `test` splits as follows:
@@ -89,13 +89,13 @@ data
 
 - Download model weights to `./model_weight/`
 
-  | Baselines         | NE(m) | SR(%) | OSR(%) | SPL(%) | Checkpoints                                         |
-  | ----------------- | ----- | ----- | ------ | ------ | --------------------------------------------------- |
-  | Seq2Seq           | 336.1 | 1.28  | 10.31  | 1.08   | [💾](https://huggingface.co/dpairnav/AirNavSeq2Seq) |
-  | CMA               | 190.3 | 4.48  | 17.06  | 4.03   | [💾](https://huggingface.co/dpairnav/AirNavCMA)     |
-  | Qwen2.5-VL-7B SFT | 48.3  | 39.56 | 52.41  | 38.53  | [💾](https://huggingface.co/dpairnav/AirNavSFT)     |
-  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)      |
-  | AirVLN-R1         | 40.0  | 51.75 | 62.29  | 50.57  | [💾](https://huggingface.co/dpairnav/AirVLN-R1)     |
+  | Baselines         | NE(m) | SR(%) | OSR(%) | SPL(%) | Checkpoints (Anonymous) |
+  | ----------------- | ----- | ----- | ------ | ------ | ----------------------- |
+  | Seq2Seq           | 336.1 | 1.28  | 10.31  | 1.08   | Hidden for review       |
+  | CMA               | 190.3 | 4.48  | 17.06  | 4.03   | Hidden for review       |
+  | Qwen2.5-VL-7B SFT | 48.3  | 39.56 | 52.41  | 38.53  | Hidden for review       |
+  | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | Hidden for review       |
+  | AirVLN-R1         | 40.0  | 51.75 | 62.29  | 50.57  | Hidden for review       |
 
 
 ## 🧠 Inference
