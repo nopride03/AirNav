@@ -1,4 +1,5 @@
 from PIL import Image
+import os
 import wandb
 
 from vlnce.parser import ExperimentArgs
@@ -16,10 +17,11 @@ def init(args: ExperimentArgs):
     _silent = args.silent
     
     if _active:
+        entity = os.getenv("WANDB_ENTITY")
         if args.resume_log_id:
-            wandb.init(entity='water-cookie', project='citynav', id=args.resume_log_id, resume="must")
+            wandb.init(entity=entity, project='citynav', id=args.resume_log_id, resume="must")
         else:
-            wandb.init(project='citynav', config=args.to_dict())
+            wandb.init(entity=entity, project='citynav', config=args.to_dict())
 
 
 def define_metric(name: str, step_metric: str = None, summary: str = None):
