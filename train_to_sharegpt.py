@@ -95,13 +95,18 @@ def build_user_content(history_paths, cur_path, instruction, cur_pose, history_a
     return "\n".join(parts)
 
 
-def convert_one(case, image_path_mode):
+def convert_one(case, image_path_mode, output_dir):
     history_paths = sample_history(case["history_views"])
     cur_path = case["cur_view"]
     all_image_paths = history_paths + [cur_path]
 
     if image_path_mode == "absolute":
         all_image_paths = [os.path.abspath(p) for p in all_image_paths]
+    elif image_path_mode == "relative":
+        all_image_paths = [
+            os.path.relpath(os.path.abspath(p), start=output_dir)
+            for p in all_image_paths
+        ]
     # "as-is" leaves whatever paths train_data_generate.py wrote
 
     user_content = build_user_content(
@@ -128,9 +133,13 @@ def main():
     ap.add_argument("--output", required=True, help="output path for LLaMA-Factory sharegpt JSON")
     ap.add_argument(
         "--image-paths",
-        choices=["absolute", "as-is"],
-        default="absolute",
-        help="absolute: rewrite image paths to absolute (recommended). as-is: keep what train.json contains.",
+        choices=["relative", "absolute", "as-is"],
+        default="relative",
+        help=(
+            "relative: rewrite image paths to be relative to output JSON directory (default). "
+            "absolute: rewrite image paths to absolute. "
+            "as-is: keep what train.json contains."
+        ),
     )
     ap.add_argument("--limit", type=int, default=0, help="optional cap on cases (0 = all)")
     args = ap.parse_args()
@@ -140,9 +149,10 @@ def main():
     if args.limit > 0:
         cases = cases[: args.limit]
 
-    converted = [convert_one(c, args.image_paths) for c in cases]
+    output_dir = str(Path(args.output).resolve().parent)
+    converted = [convert_one(c, args.image_paths, output_dir) for c in cases]
 
-    Path(args.output).parent.mkdir(parents=True, exist_ok=True)
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
     with open(args.output, "w") as f:
         json.dump(converted, f, indent=2, ensure_ascii=False)
 

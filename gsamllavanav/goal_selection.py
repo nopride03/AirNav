@@ -74,19 +74,12 @@ def goal_selection_llava(
         camera_pose = pred_goals[-1]
         
         rgb = cropclient.crop_image(map_name, camera_pose, (args.altitude*10, args.altitude*10), 'rgb')
-        output_path = f'/mnt/vepfs/fs_users/Djinhan/LLN/grounding/output_test/rgb/{map_name}_{obj_id}_{desc_id}.jpg'
+        output_path = f'./grounding/output_test/rgb/{map_name}_{obj_id}_{desc_id}.jpg'
         plt.imsave(output_path, rgb)
         annotated_rgb, masks = som.annotate(rgb, 'semantic-sam', [4])
 
 
-        # TODO
-        # goal_sel_img = '/mnt/vepfs/fs_users/caihengxing/tanjj/LLN/R1PhotoData/llava_images/goal_sel.jpg'
-        # plt.imsave(goal_sel_img, rgb)
-        # goal_sel_img_annotated = '/mnt/vepfs/fs_users/caihengxing/tanjj/LLN/R1PhotoData/llava_images/goal_sel_annotated.jpg'
-        # plt.imsave(goal_sel_img_annotated, annotated_rgb)
-        # print(target_object.descriptions)
-
-        output_path = f'/mnt/vepfs/fs_users/Djinhan/LLN/grounding/output_test/annotated_rgb/{map_name}_{obj_id}_{desc_id}.jpg'
+        output_path = f'./grounding/output_test/annotated_rgb/{map_name}_{obj_id}_{desc_id}.jpg'
         plt.imsave(output_path, annotated_rgb)
 
         
