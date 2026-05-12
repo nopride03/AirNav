@@ -2,5 +2,9 @@
 data/
 model_weight/
 __pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
 instruction_generate/
 data_train/
