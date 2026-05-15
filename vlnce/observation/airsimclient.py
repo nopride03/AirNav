@@ -16,7 +16,7 @@ class AirsimClient:
 
     def __init__(self, ip: str, port: int, perspective: Perspective):
         '''initializes settings used for all episodes'''
-        self.ip = ip  # 192.168.10.185
+        self.ip = ip  
         self.port = port  # 41451
         self.perspective = perspective
         self.map_name = None
