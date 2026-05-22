@@ -41,7 +41,7 @@ done
 backend_urls=()
 for i in "${!GPUS[@]}"; do
   port=$((BASE_PORT + i))
-  backend_urls+=("http://127.0.0.1:${port}")
+  backend_urls+=("[REDACTED_URL]}")
 done
 
 BACKEND_URLS="$(IFS=,; echo "${backend_urls[*]}")"
@@ -51,7 +51,7 @@ echo "Starting gateway on port ${GATEWAY_PORT}"
 python gateway.py --host "${HOST}" --port "${GATEWAY_PORT}" --timeout "${TIMEOUT}" &
 pids+=("$!")
 
-echo "Gateway ready at http://127.0.0.1:${GATEWAY_PORT}"
+echo "Gateway ready at [REDACTED_URL]}"
 echo "Backends: ${BACKEND_URLS}"
 echo "Model: ${MODEL_PATH}"
 

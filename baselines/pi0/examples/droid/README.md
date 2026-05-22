@@ -8,14 +8,14 @@ We offer instructions for:
 
 ## Running DROID Inference
 
-This example shows how to run the fine-tuned $\pi_{0.5}$-DROID model on the [DROID robot platform](https://github.com/droid-dataset/droid). Based on the [public RoboArena benchmark](https://robo-arena.github.io/leaderboard), this is currently our strongest generalist DROID policy. 
+This example shows how to run the fine-tuned $\pi_{0.5}$-DROID model on the [DROID robot platform]([REDACTED_URL]). Based on the [public RoboArena benchmark]([REDACTED_URL]), this is currently our strongest generalist DROID policy. 
 
 
 ### Step 1: Start a policy server
 
 Since the DROID control laptop does not have a powerful GPU, we will start a remote policy server on a different machine with a more powerful GPU and then query it from the DROID control laptop during inference.
 
-1. On a machine with a powerful GPU (~NVIDIA 4090), clone and install the `openpi` repository following the instructions in the [README](https://github.com/Physical-Intelligence/openpi).
+1. On a machine with a powerful GPU (~NVIDIA 4090), clone and install the `openpi` repository following the instructions in the [README]([REDACTED_URL]).
 2. Start the OpenPI server via the following command:
 
 ```bash
@@ -56,7 +56,7 @@ The script will ask you to enter a free-form language instruction for the robot 
 
 ## Running Other Policies
 
-We provide configs for running the baseline DROID policies from the [RoboArena](https://robo-arena.github.io/) paper. Simply run the commands below to start inference servers for the respective policies. Then follow the instructions above to run evaluation on the DROID robot.
+We provide configs for running the baseline DROID policies from the [RoboArena]([REDACTED_URL]) paper. Simply run the commands below to start inference servers for the respective policies. Then follow the instructions above to run evaluation on the DROID robot.
 
 ```
 # Train from pi0-FAST, using FAST tokenizer

@@ -12,7 +12,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     [REDACTED_URL]
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -28,7 +28,7 @@ class GemmaConfig(PretrainedConfig):
     This is the configuration class to store the configuration of a [`GemmaModel`]. It is used to instantiate an Gemma
     model according to the specified arguments, defining the model architecture. Instantiating a configuration with the
     defaults will yield a similar configuration to that of the Gemma-7B.
-    e.g. [google/gemma-7b](https://huggingface.co/google/gemma-7b)
+    e.g. [google/gemma-7b]([REDACTED_URL])
     Configuration objects inherit from [`PretrainedConfig`] and can be used to control the model outputs. Read the
     documentation from [`PretrainedConfig`] for more information.
     Args:
@@ -49,7 +49,7 @@ class GemmaConfig(PretrainedConfig):
             `num_key_value_heads=1` the model will use Multi Query Attention (MQA) otherwise GQA is used. When
             converting a multi-head checkpoint to a GQA checkpoint, each group key and value head should be constructed
             by meanpooling all the original heads within that group. For more details, check out [this
-            paper](https://huggingface.co/papers/2305.13245). If it is not specified, will default to
+            paper]([REDACTED_URL]). If it is not specified, will default to
             `num_attention_heads`.
         head_dim (`int`, *optional*, defaults to 256):
             The attention head dimension.

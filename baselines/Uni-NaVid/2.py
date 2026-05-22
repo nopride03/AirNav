@@ -1,6 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:9002/generate"
+url = "[REDACTED_URL]"
 sample = {
     "image": "examples/uav_sample/cur_view.jpg",
     "conversations": [

@@ -24,7 +24,7 @@ def parse_backends():
     gpu_list = os.getenv("GPU_LIST", os.getenv("CUDA_VISIBLE_DEVICES", "0"))
     base_port = int(os.getenv("BASE_PORT", "8050"))
     gpus = [gpu.strip() for gpu in gpu_list.split(",") if gpu.strip()]
-    return [f"http://127.0.0.1:{base_port + i}" for i in range(len(gpus))]
+    return [f"[REDACTED_URL] + i}" for i in range(len(gpus))]
 
 
 app = FastAPI()

@@ -57,7 +57,7 @@ class UR5Outputs(transforms.DataTransformFn):
 
 ```
 
-Next, we will define the `UR5DataConfig` class, which defines how to process raw UR5 data from LeRobot dataset for training. For a full example, see the `LeRobotLiberoDataConfig` config in the [training config file](https://github.com/physical-intelligence/openpi/blob/main/src/openpi/training/config.py).
+Next, we will define the `UR5DataConfig` class, which defines how to process raw UR5 data from LeRobot dataset for training. For a full example, see the `LeRobotLiberoDataConfig` config in the [training config file]([REDACTED_URL]).
 
 ```python
 
@@ -109,7 +109,7 @@ class LeRobotUR5DataConfig(DataConfigFactory):
 
 ```
 
-Finally, we define the TrainConfig for our UR5 dataset. Here, we define a config for fine-tuning pi0 on our UR5 dataset. See the [training config file](https://github.com/physical-intelligence/openpi/blob/main/src/openpi/training/config.py) for more examples, e.g. for pi0-FAST or for LoRA fine-tuning.
+Finally, we define the TrainConfig for our UR5 dataset. Here, we define a config for fine-tuning pi0 on our UR5 dataset. See the [training config file]([REDACTED_URL]) for more examples, e.g. for pi0-FAST or for LoRA fine-tuning.
 
 ```python
 TrainConfig(

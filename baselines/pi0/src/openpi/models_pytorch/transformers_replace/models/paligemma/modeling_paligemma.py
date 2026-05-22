@@ -5,7 +5,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     [REDACTED_URL]
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -280,7 +280,7 @@ class PaliGemmaModel(PaliGemmaPreTrainedModel):
         >>> processor = AutoProcessor.from_pretrained("google/paligemma2-3b-mix-224")
 
         >>> prompt = "Where is the cat standing?"
-        >>> url = "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/pipeline-cat-chonk.jpeg"
+        >>> url = "[REDACTED_URL]"
         >>> image = Image.open(requests.get(url, stream=True).raw)
 
         >>> inputs = processor(images=image, text=prompt,  return_tensors="pt")
@@ -463,7 +463,7 @@ class PaliGemmaForConditionalGeneration(PaliGemmaPreTrainedModel, GenerationMixi
         >>> processor = AutoProcessor.from_pretrained("google/paligemma2-3b-mix-224")
 
         >>> prompt = "Where is the cat standing?"
-        >>> url = "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/pipeline-cat-chonk.jpeg"
+        >>> url = "[REDACTED_URL]"
         >>> image = Image.open(requests.get(url, stream=True).raw)
 
         >>> inputs = processor(images=image, text=prompt,  return_tensors="pt")

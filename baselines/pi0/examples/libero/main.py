@@ -198,7 +198,7 @@ def _get_libero_env(task, resolution, seed):
 
 def _quat2axisangle(quat):
     """
-    Copied from robosuite: https://github.com/ARISE-Initiative/robosuite/blob/eafb81f54ffc104f905ee48a16bb15f059176ad3/robosuite/utils/transform_utils.py#L490C1-L512C55
+    Copied from robosuite: [REDACTED_URL]
     """
     # clip quaternion
     if quat[3] > 1.0:

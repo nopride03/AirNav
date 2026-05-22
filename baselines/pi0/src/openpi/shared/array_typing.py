@@ -22,7 +22,7 @@ from jaxtyping import jaxtyped
 import jaxtyping._decorator
 import torch
 
-# patch jaxtyping to handle https://github.com/patrick-kidger/jaxtyping/issues/277.
+# patch jaxtyping to handle [REDACTED_URL]
 # the problem is that custom PyTree nodes are sometimes initialized with arbitrary types (e.g., `jax.ShapeDtypeStruct`,
 # `jax.Sharding`, or even <object>) due to JAX tracing operations. this patch skips typechecking when the stack trace
 # contains `jax._src.tree_util`, which should only be the case during tree unflattening.

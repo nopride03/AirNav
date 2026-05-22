@@ -1,12 +1,12 @@
 # Run Aloha (Real Robot)
 
-This example demonstrates how to run with a real robot using an [ALOHA setup](https://github.com/tonyzhaozh/aloha). See [here](../../docs/remote_inference.md) for instructions on how to load checkpoints and run inference. We list the relevant checkpoint paths for each provided fine-tuned model below.
+This example demonstrates how to run with a real robot using an [ALOHA setup]([REDACTED_URL]). See [here](../../docs/remote_inference.md) for instructions on how to load checkpoints and run inference. We list the relevant checkpoint paths for each provided fine-tuned model below.
 
 ## Prerequisites
 
 This repo uses a fork of the ALOHA repo, with very minor modifications to use Realsense cameras.
 
-1. Follow the [hardware installation instructions](https://github.com/tonyzhaozh/aloha?tab=readme-ov-file#hardware-installation) in the ALOHA repo.
+1. Follow the [hardware installation instructions]([REDACTED_URL]) in the ALOHA repo.
 1. Modify the `third_party/aloha/aloha_scripts/realsense_publisher.py` file to use serial numbers for your cameras.
 
 ## With Docker
@@ -66,7 +66,7 @@ This task involves the robot taking two pieces of toast out of a toaster and pla
   - Works with plates of varying colors
 
 ### **Scene Setup Guidelines**
-<img width="500" alt="Screenshot 2025-01-31 at 10 06 02 PM" src="https://github.com/user-attachments/assets/3d043d95-9d1c-4dda-9991-e63cae61e02e" />
+<img width="500" alt="Screenshot 2025-01-31 at 10 06 02 PM" src="[REDACTED_URL]" />
 
 - The toaster should be positioned in the top-left quadrant of the workspace.
 - Both pieces of toast should start inside the toaster, with at least 1 cm of bread sticking out from the top.
@@ -85,7 +85,7 @@ This task involves folding a small towel (e.g., roughly the size of a hand towel
   - Performance is worse on heavily textured or striped towels
 
 ### **Scene Setup Guidelines**
-<img width="500" alt="Screenshot 2025-01-31 at 10 01 15 PM" src="https://github.com/user-attachments/assets/9410090c-467d-4a9c-ac76-96e5b4d00943" />
+<img width="500" alt="Screenshot 2025-01-31 at 10 01 15 PM" src="[REDACTED_URL]" />
 
 - The towel should be flattened and roughly centered on the table.
 - Choose a towel that does not blend in with the table surface.
@@ -104,7 +104,7 @@ This task involves opening a tupperware filled with food and pouring the content
   - The policy has seen plates of varying solid colors.
 
 ### **Scene Setup Guidelines**
-<img width="500" alt="Screenshot 2025-01-31 at 10 02 27 PM" src="https://github.com/user-attachments/assets/60fc1de0-2d64-4076-b903-f427e5e9d1bf" />
+<img width="500" alt="Screenshot 2025-01-31 at 10 02 27 PM" src="[REDACTED_URL]" />
 
 - Best performance observed when both the tupperware and plate are roughly centered in the workspace.
 - Positioning:
@@ -116,7 +116,7 @@ This task involves opening a tupperware filled with food and pouring the content
 
 1. Convert the dataset to the LeRobot dataset v2.0 format.
 
-    We provide a script [convert_aloha_data_to_lerobot.py](./convert_aloha_data_to_lerobot.py) that converts the dataset to the LeRobot dataset v2.0 format. As an example we have converted the `aloha_pen_uncap_diverse_raw` dataset from the [BiPlay repo](https://huggingface.co/datasets/oier-mees/BiPlay/tree/main/aloha_pen_uncap_diverse_raw) and uploaded it to the HuggingFace Hub as [physical-intelligence/aloha_pen_uncap_diverse](https://huggingface.co/datasets/physical-intelligence/aloha_pen_uncap_diverse).
+    We provide a script [convert_aloha_data_to_lerobot.py](./convert_aloha_data_to_lerobot.py) that converts the dataset to the LeRobot dataset v2.0 format. As an example we have converted the `aloha_pen_uncap_diverse_raw` dataset from the [BiPlay repo]([REDACTED_URL]) and uploaded it to the HuggingFace Hub as [physical-intelligence/aloha_pen_uncap_diverse]([REDACTED_URL]).
 
 
 2. Define a training config that uses the custom dataset.

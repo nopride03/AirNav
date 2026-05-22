@@ -12,7 +12,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     [REDACTED_URL]
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -511,7 +511,7 @@ class GemmaModel(GemmaPreTrainedModel):
 
         # normalized
         # Gemma downcasts the below to float16, causing sqrt(3072)=55.4256 to become 55.5
-        # See https://github.com/huggingface/transformers/pull/29402
+        # See [REDACTED_URL]
         normalizer = torch.tensor(self.config.hidden_size**0.5, dtype=hidden_states.dtype)
         #hidden_states = hidden_states * normalizer
 

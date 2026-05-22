@@ -160,7 +160,7 @@ def main(data_dir: str, *, push_to_hub: bool = False):
 ##########################################################################################################
 ################ The rest of this file are functions to parse the raw DROID data #########################
 ################ You don't need to worry about understanding this part           #########################
-################ It was copied from here: https://github.com/JonathanYang0127/r2d2_rlds_dataset_builder/blob/parallel_convert/r2_d2/r2_d2.py
+################ It was copied from here: [REDACTED_URL]
 ##########################################################################################################
 
 

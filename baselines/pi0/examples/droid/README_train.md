@@ -64,7 +64,7 @@ By default, our openpi training recipe implements the same idle filter used to t
 
 ## RoboArena
 
-Consider submitting your DROID policies to the [RoboArena benchmark](https://robo-arena.github.io/), which allows you to evaluate your policies on diverse tasks & scenes, **in the real world**! :)
+Consider submitting your DROID policies to the [RoboArena benchmark]([REDACTED_URL]), which allows you to evaluate your policies on diverse tasks & scenes, **in the real world**! :)
 
 For questions about RoboArena, please refer to the benchmark website.
 
@@ -88,7 +88,7 @@ We will also download the language annotations for the DROID dataset so we can p
 gsutil -m cp -r gs://gresearch/robotics/droid_raw/1.0.1/aggregated-annotations-030724.json <your_target_dir>
 ```
 
-For your own dataset, make sure that each episode's directory contains a folder called `recordings/MP4` -- if not, you need to first run the MP4 video extraction (from SVO files) using the script [here](https://github.com/droid-dataset/droid/blob/main/scripts/convert/svo_to_mp4.py).
+For your own dataset, make sure that each episode's directory contains a folder called `recordings/MP4` -- if not, you need to first run the MP4 video extraction (from SVO files) using the script [here]([REDACTED_URL]).
 
 Now, we will use the `convert_droid_to_lerobot.py` script to create a LeRobot version of this dataset (takes <5min for the 30 demonstrations):
 ```

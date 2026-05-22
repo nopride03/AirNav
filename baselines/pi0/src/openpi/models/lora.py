@@ -18,7 +18,7 @@ class LoRAConfig:
     alpha: float = 1.0
     # Initialization function for LoRA parameters.
     init_fn: nn.initializers.Initializer = nn.initializers.normal(stddev=0.01)
-    # Enable rank-stabilized LoRA: https://arxiv.org/pdf/2312.03732
+    # Enable rank-stabilized LoRA: [REDACTED_URL]
     rslora: bool = False
     # Axes in the weight to apply LoRA to. Should typically be the last two axes.
     axes: tuple[int, int] = (-2, -1)

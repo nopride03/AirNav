@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------
-# Modified from LLaVA (https://github.com/haotian-liu/LLaVA)
+# Modified from LLaVA ([REDACTED_URL])
 # ------------------------------------------------------------------------
 import os
 import torch

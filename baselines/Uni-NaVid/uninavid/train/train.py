@@ -1,4 +1,4 @@
-# Adopted from https://github.com/lm-sys/FastChat. Below is the original copyright:
+# Adopted from [REDACTED_URL] Below is the original copyright:
 # Adopted from tatsu-lab@stanford_alpaca. Below is the original copyright:
 #    Copyright 2023 Rohan Taori, Ishaan Gulrajani, Tianyi Zhang, Yann Dubois, Xuechen Li
 #
@@ -6,7 +6,7 @@
 #    you may not use this file except in compliance with the License.
 #    You may obtain a copy of the License at
 #
-#        http://www.apache.org/licenses/LICENSE-2.0
+#        [REDACTED_URL]
 #
 #    Unless required by applicable law or agreed to in writing, software
 #    distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,7 +14,7 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 # ------------------------------------------------------------------------
-# Modified from LLaVA (https://github.com/haotian-liu/LLaVA)
+# Modified from LLaVA ([REDACTED_URL])
 # ------------------------------------------------------------------------
 import os
 import copy

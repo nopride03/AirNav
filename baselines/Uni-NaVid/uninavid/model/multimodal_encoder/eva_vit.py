@@ -1,9 +1,9 @@
 # Based on EVA, BEIT, timm and DeiT code bases
-# https://github.com/baaivision/EVA
-# https://github.com/rwightman/pytorch-image-models/tree/master/timm
-# https://github.com/microsoft/unilm/tree/master/beit
-# https://github.com/facebookresearch/deit/
-# https://github.com/facebookresearch/dino
+# [REDACTED_URL]
+# [REDACTED_URL]
+# [REDACTED_URL]
+# [REDACTED_URL]
+# [REDACTED_URL]
 # --------------------------------------------------------'
 import math
 from functools import partial
@@ -526,7 +526,7 @@ def create_eva_vit_g(img_size=224,drop_path_rate=0.4,use_checkpoint=False,model_
         norm_layer=partial(nn.LayerNorm, eps=1e-6),
         use_checkpoint=use_checkpoint,
     )  
-    # url = "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/eva_vit_g.pth"
+    # url = "[REDACTED_URL]"
     # cached_file = download_cached_file(
     #     url, check_hash=False, progress=True
     # )

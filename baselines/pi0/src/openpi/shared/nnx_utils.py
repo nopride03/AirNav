@@ -18,7 +18,7 @@ def module_jit(meth: Callable[P, R], *jit_args, **jit_kwargs) -> Callable[P, R]:
     Why not `nnx.jit`? For some reason, naively applying `nnx.jit` to `nnx.Module` methods, bound or unbound, uses much
     more memory than necessary. I'm guessing it has something to do with the fact that it must keep track of module
     mutations. Also, `nnx.jit` has some inherent overhead compared to a standard `jax.jit`, since every call must
-    traverse the NNX module graph. See https://github.com/google/flax/discussions/4224 for details.
+    traverse the NNX module graph. See [REDACTED_URL] for details.
 
     `module_jit` is an alternative that avoids these issues by freezing the module's state. The function returned by
     `module_jit` acts exactly like the original method, except that the state of the module is frozen to whatever it was

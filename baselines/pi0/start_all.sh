@@ -65,7 +65,7 @@ for i in "${!GPUS[@]}"; do
         "${PY}" api.py --host "${HOST}" --port "${port}" \
         > "${log}" 2>&1 &
     pids+=("$!")
-    backend_urls+=("http://127.0.0.1:${port}")
+    backend_urls+=("[REDACTED_URL]}")
 done
 
 # Wait a bit for backends to initialize (no health check, just fixed delay)
@@ -81,7 +81,7 @@ echo "[start_all.sh] Starting gateway on ${HOST}:${GATEWAY_PORT}"
     > "logs/gateway_port${GATEWAY_PORT}.log" 2>&1 &
 pids+=("$!")
 
-echo "[start_all.sh] Gateway:  http://127.0.0.1:${GATEWAY_PORT}"
+echo "[start_all.sh] Gateway:  [REDACTED_URL]}"
 echo "[start_all.sh] Backends: ${BACKEND_URLS}"
 echo "[start_all.sh] Press Ctrl+C to stop everything."
 echo "[start_all.sh] Check logs/ for backend/gateway output."

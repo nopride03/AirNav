@@ -105,7 +105,7 @@ def get_actions(data_dict):
         instruction=data_dict["instruction"],
         cur_pose=data_dict["cur_position"],
     )
-    url = os.environ.get("PI0_URL", "http://127.0.0.1:9000") + "/generate"
+    url = os.environ.get("PI0_URL", "[REDACTED_URL]") + "/generate"
     data = {
         "prompt": prompt,
         "image": data_dict["cur_view"],

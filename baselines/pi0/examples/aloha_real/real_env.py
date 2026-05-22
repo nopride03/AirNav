@@ -1,4 +1,4 @@
-# Ignore lint errors because this file is mostly copied from ACT (https://github.com/tonyzhaozh/act).
+# Ignore lint errors because this file is mostly copied from ACT ([REDACTED_URL]).
 # ruff: noqa
 import collections
 import time

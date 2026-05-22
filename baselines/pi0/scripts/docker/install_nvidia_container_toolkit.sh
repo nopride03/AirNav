@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Installs the NVIDIA Container Toolkit, which allows Docker containers to access NVIDIA GPUs.
-# NVIDIA's official documentation: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+# NVIDIA's official documentation: [REDACTED_URL]
 
-curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg &&
-	curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list |
-	sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' |
+curl -fsSL [REDACTED_URL] | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg &&
+	curl -s -L [REDACTED_URL] |
+	sed 's#deb [REDACTED_URL] [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] [REDACTED_URL]' |
 		sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 
 # NVIDIA's documentation omits 'sudo' in the following command, but it is required.

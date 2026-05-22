@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     [REDACTED_URL]
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -306,7 +306,7 @@ def decode_variant(variant):
 
     return {
         # pylint:disable=line-too-long
-        # Reference: Table 2 of https://arxiv.org/abs/2106.04560.
+        # Reference: Table 2 of [REDACTED_URL]
         "width": {
             "mu": 32,
             "Ti": 192,

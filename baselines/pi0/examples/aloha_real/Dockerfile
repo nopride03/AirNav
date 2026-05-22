@@ -28,7 +28,7 @@ RUN apt-get update && \
     keyboard-configuration
 
 WORKDIR /root
-RUN curl 'https://raw.githubusercontent.com/Interbotix/interbotix_ros_manipulators/main/interbotix_ros_xsarms/install/amd64/xsarm_amd64_install.sh' > xsarm_amd64_install.sh
+RUN curl '[REDACTED_URL]' > xsarm_amd64_install.sh
 RUN chmod +x xsarm_amd64_install.sh
 RUN export TZ='America/Los_Angeles' && ./xsarm_amd64_install.sh -d noetic -n
 
@@ -38,7 +38,7 @@ RUN cd /root/interbotix_ws && source /opt/ros/noetic/setup.sh && source /root/in
 # Install python 3.10 because this ROS image comes with 3.8
 RUN mkdir /python && \
     cd /python && \
-    wget https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz && \
+    wget [REDACTED_URL] && \
     tar -zxvf Python-3.10.14.tgz && \
     cd Python-3.10.14 && \
     ls -lhR && \

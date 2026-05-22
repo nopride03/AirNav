@@ -1,5 +1,5 @@
 # Dockerfile for serving a PI policy.
-# Based on UV's instructions: https://docs.astral.sh/uv/guides/integration/docker/#developing-in-a-container
+# Based on UV's instructions: [REDACTED_URL]
 
 # Build the container:
 # docker build . -t openpi_server -f scripts/docker/serve_policy.Dockerfile

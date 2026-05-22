@@ -13,7 +13,7 @@ uv run examples/libero/convert_libero_data_to_lerobot.py --data_dir /path/to/you
 Note: to run the script, you need to install tensorflow_datasets:
 `uv pip install tensorflow tensorflow_datasets`
 
-You can download the raw Libero datasets from https://huggingface.co/datasets/openvla/modified_libero_rlds
+You can download the raw Libero datasets from [REDACTED_URL]
 The resulting dataset will get saved to the $HF_LEROBOT_HOME directory.
 Running this conversion script will take approximately 30 minutes.
 """

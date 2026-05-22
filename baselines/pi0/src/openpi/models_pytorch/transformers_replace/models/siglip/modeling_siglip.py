@@ -5,7 +5,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     [REDACTED_URL]
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -40,7 +40,7 @@ logger = logging.get_logger(__name__)
 
 def _trunc_normal_(tensor, mean, std, a, b):
     # Cut & paste from PyTorch official master until it's in a few official releases - RW
-    # Method based on https://people.sc.fsu.edu/~jburkardt/presentations/truncated_normal.pdf
+    # Method based on [REDACTED_URL]
     def norm_cdf(x):
         # Computes standard normal cumulative distribution function
         return (1.0 + math.erf(x / math.sqrt(2.0))) / 2.0
@@ -236,8 +236,8 @@ class SiglipVisionEmbeddings(nn.Module):
         images. This method is also adapted to support torch.jit tracing and no class embeddings.
 
         Adapted from:
-        - https://github.com/facebookresearch/dino/blob/de9ee3df6cf39fac952ab558447af1fa1365362a/vision_transformer.py#L174-L194, and
-        - https://github.com/facebookresearch/dinov2/blob/e1277af2ba9496fbadf7aec6eba56e8d882d1e35/dinov2/models/vision_transformer.py#L179-L211
+        - [REDACTED_URL] and
+        - [REDACTED_URL]
         """
 
         num_patches = embeddings.shape[1]
@@ -860,7 +860,7 @@ class SiglipVisionModel(SiglipPreTrainedModel):
         >>> model = SiglipVisionModel.from_pretrained("google/siglip-base-patch16-224")
         >>> processor = AutoProcessor.from_pretrained("google/siglip-base-patch16-224")
 
-        >>> url = "http://images.cocodataset.org/val2017/000000039769.jpg"
+        >>> url = "[REDACTED_URL]"
         >>> image = Image.open(requests.get(url, stream=True).raw)
 
         >>> inputs = processor(images=image, return_tensors="pt")
@@ -984,7 +984,7 @@ class SiglipModel(SiglipPreTrainedModel):
         >>> model = AutoModel.from_pretrained("google/siglip-base-patch16-224")
         >>> processor = AutoProcessor.from_pretrained("google/siglip-base-patch16-224")
 
-        >>> url = "http://images.cocodataset.org/val2017/000000039769.jpg"
+        >>> url = "[REDACTED_URL]"
         >>> image = Image.open(requests.get(url, stream=True).raw)
 
         >>> inputs = processor(images=image, return_tensors="pt")
@@ -1037,7 +1037,7 @@ class SiglipModel(SiglipPreTrainedModel):
         >>> model = AutoModel.from_pretrained("google/siglip-base-patch16-224")
         >>> processor = AutoProcessor.from_pretrained("google/siglip-base-patch16-224")
 
-        >>> url = "http://images.cocodataset.org/val2017/000000039769.jpg"
+        >>> url = "[REDACTED_URL]"
         >>> image = Image.open(requests.get(url, stream=True).raw)
 
         >>> texts = ["a photo of 2 cats", "a photo of 2 dogs"]
@@ -1090,7 +1090,7 @@ class SiglipModel(SiglipPreTrainedModel):
 
         loss = None
         if return_loss:
-            # Adapted from https://github.com/google-research/big_vision/blob/01edb81a4716f93a48be43b3a4af14e29cdb3a7f/big_vision/trainers/proj/image_text/siglip.py#L287
+            # Adapted from [REDACTED_URL]
             eye = torch.eye(logits_per_text.size(0), device=logits_per_text.device)
             m1_diag1 = -torch.ones_like(logits_per_text) + 2 * eye
             loglik = torch.nn.functional.logsigmoid(m1_diag1 * logits_per_text)
@@ -1160,7 +1160,7 @@ class SiglipForImageClassification(SiglipPreTrainedModel):
         >>> import requests
 
         >>> torch.manual_seed(3)  # doctest: +IGNORE_RESULT
-        >>> url = "http://images.cocodataset.org/val2017/000000039769.jpg"
+        >>> url = "[REDACTED_URL]"
         >>> image = Image.open(requests.get(url, stream=True).raw)
 
         >>> # note: we are loading a `SiglipModel` from the hub here,
