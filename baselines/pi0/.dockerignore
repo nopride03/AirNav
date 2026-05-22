@@ -1,0 +1,8 @@
+.venv
+assets
+checkpoints
+data
+logs
+wandb
+__pycache__
+*.pyc

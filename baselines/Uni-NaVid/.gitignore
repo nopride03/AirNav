@@ -1,0 +1,50 @@
+# Python
+__pycache__
+*.pyc
+*.egg-info
+dist
+
+# Log
+*.log
+*.log.*
+*.jsonl
+.env
+.env.*
+
+# Data
+!**/alpaca-data-conversation.json
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.tar
+*.tar.gz
+*.zip
+
+# Editor
+.idea
+*.swp
+
+# Other
+.DS_Store
+wandb
+output
+outputs
+work_dirs
+data
+model_zoo
+
+test_cases
+
+checkpoints
+ckpts*
+
+.ipynb_checkpoints
+*.ipynb
+
+# DevContainer
+!.devcontainer/*
+
