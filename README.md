@@ -97,6 +97,10 @@ data
   | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)      |
   | AirVLN-R1         | 40.0  | 51.75 | 62.29  | 50.57  | [💾](https://huggingface.co/dpairnav/AirVLN-R1)     |
 
+### Baseline Usage
+
+- **pi_0**: see [`baselines/pi0/README_UAV.md`](baselines/pi0/README_UAV.md) for AirNav usage.
+- **Uni-NaVid**: see [`baselines/Uni-NaVid/README_UAV.md`](baselines/Uni-NaVid/README_UAV.md) for AirNav usage.
 
 ## 🧠 Inference
 
@@ -213,4 +217,3 @@ Set `model_type` in `light_model_train.py` to switch between `CMA` and `Seq2Seq`
 ```bash
 python light_model_train.py
 ```
-
