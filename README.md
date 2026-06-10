@@ -93,6 +93,8 @@ data
   | ----------------- | ----- | ----- | ------ | ------ | --------------------------------------------------- |
   | Seq2Seq           | 336.1 | 1.28  | 10.31  | 1.08   | [💾](https://huggingface.co/dpairnav/AirNavSeq2Seq) |
   | CMA               | 190.3 | 4.48  | 17.06  | 4.03   | [💾](https://huggingface.co/dpairnav/AirNavCMA)     |
+  | pi0-vln-lora      | 147.5 | 5.28  | 13.93  | 4.60   | [💾](https://huggingface.co/dpairnav/pi0-vln-lora)  |
+  | uninavid          | 131.2 | 15.89 | 34.25  | 14.18  | [💾](https://huggingface.co/dpairnav/uninavid)      |
   | Qwen2.5-VL-7B SFT | 48.3  | 39.56 | 52.41  | 38.53  | [💾](https://huggingface.co/dpairnav/AirNavSFT)     |
   | Qwen2.5-VL-7B RL  | 165.8 | 2.31  | 4.39   | 2.03   | [💾](https://huggingface.co/dpairnav/AirNavRL)      |
   | AirVLN-R1         | 40.0  | 51.75 | 62.29  | 50.57  | [💾](https://huggingface.co/dpairnav/AirVLN-R1)     |
